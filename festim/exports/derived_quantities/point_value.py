@@ -15,5 +15,5 @@ class PointValue(DerivedQuantity):
         self.title = "{} value at {}".format(field, x)
 
     def compute(self):
-        """The valu at the point"""
+        """The value at the point"""
         return self.function(self.x)
