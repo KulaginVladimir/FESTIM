@@ -7,7 +7,6 @@ def test_title_H():
     x = 1
     field = "solute"
     my_value = PointValue(field, x)
-    print(my_value.title)
     assert my_value.title == "{} value at {}".format(field, x)
 
 
@@ -22,7 +21,7 @@ class TestCompute:
     mesh = f.UnitIntervalMesh(10)
     V = f.FunctionSpace(mesh, "P", 1)
 
-    c = f.interpolate(f.Expression("1+x[0]", degree=1), V)
+    c = f.interpolate(f.Expression("x[0]", degree=1), V)
 
     x = 1
     my_value = PointValue("solute", x)
